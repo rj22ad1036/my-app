@@ -3,10 +3,10 @@ import { connectToDB } from "@/utils/db";
 export const dynamic = "force-dynamic";
 export const POST = async (req, res) => {
   try {
-    const { name } = await req.json();
-    console.log("=> Fetching user with name: " + name);
+    const { id } = await req.json();
+    console.log("=> Fetching book with id: " + id);
     await connectToDB();
-    const book = await Book.findOne({ name });
+    const book = await Book.findOne({ id });
     if (!book) {
       return new Response(JSON.stringify({ error: "Book not found" }), {
         status: 404,
@@ -14,9 +14,10 @@ export const POST = async (req, res) => {
     }
     return new Response(JSON.stringify(book), { status: 200 });
   } catch (error) {
-    console.error("Error fetching user:", error);
+    console.error("Error fetching book:", error);
     return new Response(JSON.stringify({ error: "Internal server error" }), {
       status: 500,
     });
   }
 };
+// Compare this snippet from app/api/book/fetch/route.js:
