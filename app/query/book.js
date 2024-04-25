@@ -33,14 +33,24 @@ const createBook = async (
   chapter_count
 ) => {
   try {
-    console.log("creating book");
+    // console.log(
+    //   "creating book",
+    //   name,
+    //   id,
+    //   image,
+    //   description,
+    //   author,
+    //   link,
+    //   category,
+    //   chapter_count
+    // );
 
     const response = await fetch(`/api/book/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(
+      body: JSON.stringify({
         name,
         id,
         image,
@@ -48,8 +58,8 @@ const createBook = async (
         author,
         link,
         category,
-        chapter_count
-      ),
+        chapter_count,
+      }),
     });
     if (!response.ok) {
       throw new Error("Something went wrong");

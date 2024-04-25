@@ -14,13 +14,21 @@ export const POST = async (req, res) => {
       chapter_count,
     } = await req.json();
     console.log("=> Creating book with id: " + id);
+    console.log("=> Creating book with name: " + name);
+    console.log("=> Creating book with image: " + image);
+    console.log("=> Creating book with description: " + description);
+    console.log("=> Creating book with author: " + author);
+    console.log("=> Creating book with link: " + link);
+    console.log("=> Creating book with category: " + category);
+    console.log("=> Creating book with chapter_count: " + chapter_count);
+
     await connectToDB();
     const book = new Book({
       name,
       id,
+      author,
       image,
       description,
-      author,
       link,
       category,
       chapter_count,

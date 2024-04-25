@@ -1,40 +1,41 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getBooks, getBook } from "../query/book";
 import BookCard from "@/components/BookCard";
-import { useState } from "react";
-import { useEffect } from "react";
-import { getBooks } from "../query/book";
+
 const page = () => {
-  const [books, setBooks] = useState([
-    {
-      id: 1,
-      name: "The Great Gatsby",
-      author: " F. Scott Fitzgerald",
-      genre: "Fiction",
-      image:
-        "https://images-na.ssl-images-amazon.com/images/I/41X5fjPQDPL._SX331_BO1,204,203,200_.jpg",
-      description:
-        "The Great Gatsby is a novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.",
-      chapter_count: 9,
-    },
-    {
-      id: 2,
-      name: "To Kill a Mockingbird",
-      author: "Harper Lee",
-      genre: "Fiction",
-      image:
-        "https://images-na.ssl-images-amazon.com/images/I/51b8D6X1NVL._SX331_BO1,204,203,200_.jpg",
-      description:
-        "To Kill a Mockingbird is a novel by Harper Lee published in 1960. Instantly successful, widely read in high schools and middle schools in the United States, it has become a classic of modern American literature, winning the Pulitzer Prize.",
-      chapter_count: 10,
-    },
-  ]);
+  const [books, setBooks] = useState([]);
+  const [book, setBook] = useState({});
   useEffect(() => {
-    getBooks().then((books) => {
-      console.log(books);
-      setBooks(books);
+    getBooks().then((data) => {
+      setBooks(data);
     });
   }, []);
-  return <div>{JSON.stringify(books)}</div>;
+  const [bookId, setBookId] = useState("");
+  const handleClick = async () => {
+    const data = await getBook(bookId);
+    setBook(data);
+  };
+  return (
+    <div className="flex flex-col w-full h-full">
+      <div className="text-2xl">Books</div>
+      <div className="flex flex-wrap">
+        {books.map((book) => (
+          <BookCard
+            key={book.id}
+            name={book.name}
+            author={book.author}
+            chapter_count={book.chapter_count}
+            description={book.description}
+            image={book.image}
+            link={book.link}
+            category={book.category}
+            id={book.id}
+          />
+        ))}
+      </div>
+    </div>
+  );
 };
+
 export default page;

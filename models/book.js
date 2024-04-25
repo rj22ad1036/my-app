@@ -54,7 +54,7 @@ try {
           default: 0,
         },
       },
-      { collection: "book" }
+      { collection: "books" }
     )
   );
 }

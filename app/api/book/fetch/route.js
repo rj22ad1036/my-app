@@ -1,6 +1,8 @@
-import Book from "@/models/book";
 import { connectToDB } from "@/utils/db";
+import Book from "@/models/book";
+
 export const dynamic = "force-dynamic";
+
 export const POST = async (req, res) => {
   try {
     const { id } = await req.json();

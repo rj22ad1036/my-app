@@ -1,5 +1,3 @@
-// import all books
-
 import Book from "@/models/book";
 import { connectToDB } from "@/utils/db.js";
 
