@@ -1,6 +1,7 @@
 // import all books
+
 import Book from "@/models/book";
-import { connectToDB } from "@/utils/database";
+import { connectToDB } from "@/utils/db.js";
 
 export const dynamic = "force-dynamic";
 
