@@ -17,9 +17,8 @@ const page = () => {
     setBook(data);
   };
   return (
-    <div className="flex flex-col w-full h-full">
-      <div className="text-2xl">Books</div>
-      <div className="flex flex-wrap">
+    <div className="flex flex-col w-full h-full items-center pt-2 ">
+      <div className="flex flex-wrap justify-center gap-4">
         {books.map((book) => (
           <BookCard
             key={book.id}

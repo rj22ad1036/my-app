@@ -15,22 +15,11 @@ const BookCard = ({
 }) => {
   return (
     <Link
-      className="flex flex-col gap-2 bg-gray-700 p-5 rounded-lg"
+      className="flex flex-col gap-2 border-2 border-black p-2 bg-gray-200 rounded-lg  mb-4"
       href={`/manga/${id}`}
     >
-      <div className="text-2xl text-white font-bold">{name}</div>
-      <div className="text-xl text-white font-semibold">Author: {author}</div>
-      <div className="text-xl text-white font-semibold">Genre: {genre}</div>
-      <div className="text-xl text-white font-semibold">
-        Chapter Count: {chapter_count}
-      </div>
-      <div className="text-xl text-white font-semibold">
-        Description: {description}
-      </div>
-      <div className="text-xl text-white font-semibold">Link: {link}</div>
-      <div className="text-xl text-white font-semibold">
-        Category: {category}
-      </div>
+      <div className="text-md  font-bold">{name}</div>
+
       <div className="flex justify-center">
         <Image src={image} width={200} height={300} />
       </div>
