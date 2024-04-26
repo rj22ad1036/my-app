@@ -1,10 +1,9 @@
 import React from "react";
-import Navbar from "@/components/Navbar";
 
 const page = () => {
   return (
-    <div className="bg-gray-200 w-full h-full">
-      <Navbar />
+    <div className=" absolute  w-full h-full bg-gray-500">
+      <h1>Page</h1>
     </div>
   );
 };
