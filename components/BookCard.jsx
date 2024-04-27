@@ -21,7 +21,7 @@ const BookCard = ({
       <div className="text-md  font-bold">{name}</div>
 
       <div className="flex justify-center">
-        <Image src={image} width={200} height={300} />
+        <Image src={image} width={200} height={300} className="rounded-md" />
       </div>
     </Link>
   );

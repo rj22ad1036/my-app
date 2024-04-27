@@ -4,8 +4,8 @@ import MaskIcon from "./icons/Mask";
 
 const Navbar = () => {
   return (
-    <div className="flex items-center flex-row w-full h-14 p-4 bg-red-400 pl-5 pr-5">
-      <div className="flex items-center w-1/2 text-3xl font-semibold text-indigo-800 flex-row gap-3">
+    <div className="flex items-center flex-row w-full h-14 p-4 bg-[#3c1196] pl-5 pr-5">
+      <div className="flex items-center w-1/2 text-3xl font-semibold text-[#af94e8] flex-row gap-3">
         <div>
           <BookIcon />
         </div>

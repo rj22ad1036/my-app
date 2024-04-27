@@ -33,7 +33,7 @@ const page = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center  bg-[#af94e8]">
       {/* button and inputs */}
       <button
         onClick={handleClick}

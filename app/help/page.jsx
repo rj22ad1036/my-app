@@ -14,8 +14,8 @@ function HelpPage() {
   };
 
   return (
-    <div className=" absolute w-full h-full flex flex-col pt-10 items-center  gap-5 bg-gray-500">
-      <h1 className="text-3xl font-semibold ">Need Some help??</h1>
+    <div className=" absolute w-full h-full flex flex-col pt-10 items-center  gap-5  bg-[#0f091b]">
+      <h1 className="text-3xl font-semibold text-white ">Need Some help??</h1>
       {submitted ? (
         <p className="text-white">We will get to your problem soon</p>
       ) : (
@@ -23,7 +23,7 @@ function HelpPage() {
           className="flex flex-col justify-between h-64 space-y-4"
           onSubmit={handleSubmit}
         >
-          <label className="flex flex-col">
+          <label className="flex flex-col text-white">
             UserName:
             <input
               className="border-black border-2 rounded-md p-1"
@@ -32,7 +32,7 @@ function HelpPage() {
               onChange={(e) => setName(e.target.value)}
             />
           </label>
-          <label className="flex flex-col">
+          <label className="flex flex-col text-white">
             Email:
             <input
               className="border-black border-2 rounded-md p-1"
@@ -41,7 +41,7 @@ function HelpPage() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </label>
-          <label className="flex flex-col">
+          <label className="flex flex-col text-white">
             Describe your problem:
             <textarea
               className="border-black border-2 rounded-md p-1 "
@@ -49,7 +49,7 @@ function HelpPage() {
               onChange={(e) => setProblem(e.target.value)}
             />
           </label>
-          <label className="flex flex-col">
+          <label className="flex flex-col text-white">
             Category:
             <input
               className="border-black border-2 rounded-md p-1"

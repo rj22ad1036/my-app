@@ -17,7 +17,7 @@ const page = () => {
     setBook(data);
   };
   return (
-    <div className=" absolute w-full h-full flex flex-col w-full h-full items-center pt-2 bg-gray-500  ">
+    <div className=" absolute w-full h-full flex flex-col w-full h-full items-center pt-2  bg-[#0f091b]  ">
       <div className="flex flex-wrap justify-center gap-4">
         {books.map((book) => (
           <BookCard
