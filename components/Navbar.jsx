@@ -9,7 +9,10 @@ const Navbar = () => {
         <div>
           <BookIcon />
         </div>
-        <div> ViChron</div>
+        <a href="\">
+          {" "}
+          <div> ViChron</div>{" "}
+        </a>
       </div>
       <div className="flex items-center justify-between w-1/2  text-xl text-white font-semibold ">
         <a href="/home">Home</a>
